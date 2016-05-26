@@ -60,33 +60,33 @@ extension SignUpType {
 extension SignUpType {
     
     func validateFullName() throws -> String {
-        guard let fullName = fullName where fullName != ""
+        guard let fullName = fullName where !fullName.isEmpty
         else { throw CredentialError.EmptyFullName }
         return fullName
     }
     
     func validateCity() throws -> String {
-        guard let city = city where city != ""
+        guard let city = city where !city.isEmpty
         else { throw CredentialError.EmptyCity }
         return city
     }
     
     func validateGenderString() throws -> String {
-        guard let genderString = genderString where genderString != ""
+        guard let genderString = genderString where !genderString.isEmpty
         else { throw CredentialError.EmptyGender }
         return genderString
     }
     
     func validateBirthDateString() throws -> String {
-        guard let birthDateString = birthDateString where birthDateString != ""
+        guard let birthDateString = birthDateString where !birthDateString.isEmpty
         else { throw CredentialError.EmptyBirthDate }
         return birthDateString
     }
     
     func validatePassword() throws -> String {
-        guard let password = password where password != ""
+        guard let password = password where !password.isEmpty
         else { throw CredentialError.EmptyPassword }
-        guard let passwordRepeat = passwordRepeat where passwordRepeat != ""
+        guard let passwordRepeat = passwordRepeat where !passwordRepeat.isEmpty
         else { throw CredentialError.EmptyPassword }
         guard password == passwordRepeat else { throw CredentialError.PasswordsDontMatch }
         return password

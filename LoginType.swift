@@ -53,7 +53,7 @@ extension LoginType {
 extension LoginType {
     
     func validateEmail() throws -> String {
-        guard let email = email where email != ""
+        guard let email = email where !email.isEmpty
         else { throw CredentialError.EmptyEmail }
         
         // Validate syntax
@@ -66,7 +66,7 @@ extension LoginType {
     }
     
     func validatePassword() throws -> String {
-        guard let password = password where password != ""
+        guard let password = password where !password.isEmpty
         else { throw CredentialError.EmptyPassword }
         return password
     }
