@@ -24,7 +24,7 @@ extension AlertPresentable where Self: UIViewController {
     }
     
     func alertSomethingWentWrong() {
-        alert(title: "Oops!", message: "Bir şeyler yanlış gitti, lütfen tekrar deneyin.", cancelButtonTitle: "Tamam")
+        alert(title: "Oops!", message: "Something went wrong, please try again.", cancelButtonTitle: "OK")
     }
     
 }
