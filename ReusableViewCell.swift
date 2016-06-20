@@ -1,6 +1,8 @@
 /*
  ReusableViewCell
  
+ Created by Anıl Göktaş on 4/28/16.
+ 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
@@ -25,10 +27,14 @@ import Foundation
 // MARK: - ReusableViewCell
 
 protocol ReusableViewCell: ReusableView, NibLoadableView {
+    static var estimatedHeight: CGFloat { get }
+    
     func didEndDisplaying()
 }
 
 extension ReusableViewCell {
+    static var estimatedHeight: CGFloat { return 44 }
+    
     func didEndDisplaying() { }
 }
 
